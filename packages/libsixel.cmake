@@ -3,6 +3,7 @@ ExternalProject_Add(libsixel
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--sparse --filter=tree:0"
     GIT_CLONE_POST_COMMAND "sparse-checkout set --no-cone /* !images"
+    PATCH_COMMAND ${EXEC} patch_forward -p1 ${CMAKE_CURRENT_SOURCE_DIR}/libsixel-0001-fix-loader-test-allocator-scope.patch
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${EXEC} <SOURCE_DIR>/autogen.sh && CONF=1 <SOURCE_DIR>/configure
         --host=${TARGET_ARCH}

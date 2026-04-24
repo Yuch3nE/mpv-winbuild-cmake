@@ -1,0 +1,12 @@
+--- src/encoder.h	2026-04-24 00:00:00.000000000 +0000
++++ src/encoder.h	2026-04-24 00:00:00.000000000 +0000
+@@ -42,7 +42,9 @@
+ #if defined(_MSC_VER)
+ typedef unsigned int uint32_t;
+ #endif
++#ifndef __cplusplus
+ typedef int bool;
++#endif
+ #ifndef __INTEL_COMPILER
+ typedef enum {
+ 	XVID_MODE_INTER = 0,

@@ -2,7 +2,7 @@ ExternalProject_Add(mbedtls
     GIT_REPOSITORY https://github.com/Mbed-TLS/mbedtls.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_CLONE_FLAGS "--filter=tree:0"
-    PATCH_COMMAND ${EXEC} git am --3way ${CMAKE_CURRENT_SOURCE_DIR}/mbedtls-*.patch
+    PATCH_COMMAND ${EXEC} git_am_forward ${CMAKE_CURRENT_SOURCE_DIR}/mbedtls-*.patch
     UPDATE_COMMAND ""
     GIT_REMOTE_NAME origin
     GIT_TAG master
